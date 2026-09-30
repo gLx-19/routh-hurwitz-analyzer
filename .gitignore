@@ -11,7 +11,8 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+# ATENÇÃO: Comentei a linha *.jar abaixo para que o Git aceite o executável final
+# *.jar
 *.war
 *.nar
 *.ear
@@ -22,3 +23,17 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# ==========================================
+
+# Pastas onde as IDEs jogam o código compilado localmente
+bin/
+out/
+target/
+
+# VS Code 
+.vscode/
+
+# IntelliJ IDEA 
+.idea/
+*.iml
