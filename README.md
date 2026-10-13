@@ -16,15 +16,14 @@ O código-fonte está no pacote `routh` e foi concebido sem comentários interno
 
 ---
 
-## 2. Explicação Humana e Didática do Código
+## 2. Explicação do Código
 
 ### A) Interpretação da Equação Polinomial (Parser)
 Na prática acadêmica, cada aluno ou usuário digita polinômios de formas diferentes: com ou sem espaços, com `s2` ou `s^2`, omitindo potências intermediárias, ou até mesmo incluindo termos como `= 0`.
 
 O método `parseEquacao(String equacao)` lida com essas variações em três etapas:
 1. **Limpeza preliminar**: Se houver `= 0` ou qualquer igualdade, o lado direito é descartado. Multiplicações explícitas como `*` também são removidas.
-2. **Leitura por Expressão Regular (Regex)**:
-   A expressão regular `([+-]?)\s*([0-9]*\.?[0-9]+)?(?:([sS])(?:\^?([0-9]+))?)?` decompõe cada pedaço do texto em quatro partes essenciais:
+2. **Leitura por Regex**:
    - Sinal do termo (`+` ou `-`).
    - Coeficiente numérico (por exemplo, `2`, `0.5`, ou implícito `1.0` quando vem apenas `s` ou `-s`).
    - Presença da letra `s` (maiúscula ou minúscula).
@@ -35,7 +34,7 @@ O método `parseEquacao(String equacao)` lida com essas variações em três eta
 ---
 
 ### B) Nomenclatura Didática das Linhas Iniciais
-A teoria de controle organiza as duas primeiras linhas da tabela separando os termos em índices alternados. Para tornar a tabela visualmente clara quanto à paridade das potências:
+A teoria organiza as duas primeiras linhas da tabela separando os termos em índices alternados. Para tornar a tabela visualmente clara:
 - Se o grau máximo do polinômio $n$ for **par** (ex: $s^4, s^2$):
   - A 1ª linha recebe o rótulo **`Coeficientes pares: s^n`**.
   - A 2ª linha recebe o rótulo **`Coeficientes ímpares: s^(n-1)`**.
